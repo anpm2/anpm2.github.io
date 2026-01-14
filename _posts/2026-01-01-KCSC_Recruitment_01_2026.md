@@ -1558,7 +1558,7 @@ __int64 mul_matrix(_BYTE *matrix, _BYTE *enc_matrix, int len_ct, int *key)
 }
 ```
 
-> [brute.py]()
+> brute.py
 
 ```python
 from itertools import product
