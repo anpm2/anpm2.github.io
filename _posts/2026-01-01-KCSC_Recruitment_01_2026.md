@@ -464,6 +464,7 @@ for c in product(char_hex, repeat=6):
 
 Đây là main:
 
+{% capture codebblock0 %}
 ```cpp
 int __cdecl main(int argc, const char **argv, const char **envp)
 {
@@ -680,6 +681,12 @@ LABEL_42:
   return 0;
 }
 ```
+{% endcapture %}
+<details>
+<summary><strong>main function</strong></summary>
+{{ codebblock0 | markdownify }}
+</details>
+
 
 `win%updater.exe` này là 1 file PE tương tác với C2.
 
@@ -746,9 +753,7 @@ Gen random 16 btye **iv**: `E3 A8 C5 C6 4F 37 0E 70 51 B0 A1 1B 7C AD E6 18`
 ![image](/assets/posts/KCSC_Recruitment_01_2026/26.png)
 Mã hóa file trong `My Documents` (đầu tiên là `desktop.ini`):
 
-<details>
-<summary>encrypt_file function</summary>
-
+{% capture codebblock1 %}
 ```cpp
 int __fastcall encrypt_file(char *FileName, _DWORD *a2, HCRYPTPROV *p_phProv, BYTE *seed, BYTE *iv)
 {
@@ -951,7 +956,12 @@ LABEL_25:
   return v28;
 }
 ```
+{% endcapture %}
+<details>
+<summary><strong>encrypt_file function</strong></summary>
+{{ codebblock1 | markdownify }}
 </details>
+
 
 File được mã hóa **AES mode CBC** với `key = seed ^ iv`:
 
